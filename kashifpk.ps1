@@ -136,27 +136,30 @@ function Get-SourceFiles {
     $zipPath = "$TempDir\source.zip"
 
     Write-Color ""
-    Write-Color "  Downloading activation files..." "Cyan"
+    Write-Color "  ░▒▓ Kashif PK IDM Activator - Downloading required files..." "Cyan"
+    Write-Color ""
 
+    $attempt = 1
     foreach ($url in $urls) {
-        Write-Color "  Trying: $url" "Yellow"
+        Write-Color "  [>>] Connecting to server $attempt of $($urls.Count)..." "Yellow"
         try {
             $wc = New-Object System.Net.WebClient
             $wc.DownloadFile($url, $zipPath)
-            Write-Color "  [OK] Download successful!" "Green"
+            Write-Color "  [OK] Kashif PK IDM Activator - Download successful!" "Green"
 
-            Write-Color "  Extracting files..." "Cyan"
+            Write-Color "  [>>] Extracting activation files..." "Cyan"
             Expand-Archive -Path $zipPath -DestinationPath $TempDir -Force
-            Write-Color "  [OK] Extraction complete." "Green"
+            Write-Color "  [OK] Files ready." "Green"
 
             $srcDir = "$TempDir\IDM-Activation-Script-main\src"
             return $srcDir
         } catch {
-            Write-Color "  [!] Failed. Trying next source..." "Red"
+            Write-Color "  [!] Server $attempt unavailable. Trying next..." "Red"
         }
+        $attempt++
     }
 
-    Write-Color "  [ERROR] Could not download from any source." "Red"
+    Write-Color "  [ERROR] Kashif PK IDM Activator - Could not download files." "Red"
     return $null
 }
 
