@@ -1,7 +1,7 @@
 # ==============================================================================
 #   Kashif PK IDM Activator - v1.0.0
 #   Author  : Kashif PK
-#   Usage   : irm https://yoursite.com/kashifpk | iex
+#   Usage   : irm https://raw.githubusercontent.com/Kashif-PK-IDM-Activator/Kashif-PK-IDM-Activator/refs/heads/main/kashifpk.ps1 | iex
 # ==============================================================================
 
 # ---- Force Admin ----
@@ -19,7 +19,7 @@ if (-not (Test-Admin)) {
     if ($scriptPath) {
         Start-Process $psExe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
     } else {
-        Start-Process $psExe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"irm https://yoursite.com/kashifpk | iex`"" -Verb RunAs
+        Start-Process $psExe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"irm https://raw.githubusercontent.com/Kashif-PK-IDM-Activator/Kashif-PK-IDM-Activator/refs/heads/main/kashifpk.ps1 | iex`"" -Verb RunAs
     }
     exit
 }
